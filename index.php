@@ -85,20 +85,14 @@
 							</div>
 						</div>
 						<div class="row">
-							<?php
-								if (mysqli_num_rows($select) > 0) {
-									while ($result = mysqli_fetch_assoc($select)) {
-										 ?>
+						<?php
+							if (mysqli_num_rows($select) > 0) {
+								while ($result = mysqli_fetch_assoc($select)) {
+									 ?>
 								<div class="col-md-6">
 									<div class="post">
-										<div class="post-row">
-											<div class="post-col ">
-												<h4 class="post-header"><a class="post-header-link" href="/template.php?id=<?php echo $result['id'] ?>"><?php echo $result['name']; ?></a></h4>
-											</div>
-											<div class="post-col post-col-right">
-												<p class="post-time"><?php echo get_date($result['time']); ?></p>
-											</div>
-										</div>
+										<h4 class="post-header"><a class="post-header-link" href="/template.php?id=<?php echo $result['id'] ?>"><?php echo $result['name']; ?></a></h4>
+										<p class="post-time"><?php echo get_date($result['time']); ?></p>
 										<a href="/template.php?id=<?php echo $result['id'] ?>"><div class="post-img-wrap"><img src="<?php echo map_img($result['link']); ?>" alt="<?php echo $result['name']; ?>" class="post-img"><div class="post-img-hover"></div></div></a>
 										<p class="post-description"><?php echo get_description($result['description'], $result['id']); ?></p>
 										<hr class="post-inner-line">
@@ -129,16 +123,16 @@
 		</div>
 	</div>
 
-	<?php
+<?php
 	if ($userdata == []) {
-		?>
+?>
 	<div id="notice" class="mfp-hide white-popup-block popup-form alert alert-success">
 		<h4 class="alert-heading">Мы не знаем как именовать карту!</h4>
 		<p>Чтобы создавать новые карты требуется <a class="alert-link" href="/login.php">войти в аккаунт</a> или <a class="alert-link" href="/signup.php">зарегестрироваться.</a></p>
 	</div>
-		<?php
+<?php
 	}
-	?>
+?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
