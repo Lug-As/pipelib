@@ -128,7 +128,7 @@
 ?>
 	<div id="notice" class="mfp-hide white-popup-block popup-form alert alert-success">
 		<h4 class="alert-heading">Мы не знаем как именовать карту!</h4>
-		<p>Чтобы создавать новые карты требуется <a class="alert-link" href="/login.php">войти в аккаунт</a> или <a class="alert-link" href="/signup.php">зарегестрироваться.</a></p>
+		<p>Чтобы создавать новые карты требуется <a class="alert-link" href="login.php">войти в аккаунт</a> или <a class="alert-link" href="signup.php">зарегестрироваться.</a></p>
 	</div>
 <?php
 	}
@@ -138,7 +138,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/script.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$('.show-message-link').magnificPopup({
