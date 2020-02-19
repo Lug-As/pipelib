@@ -59,9 +59,9 @@
 							</div>
 						</div>
 					</div>
-					<?php
+				<?php
 					if ($checked == FALSE) {
-					?>
+				?>
 					<div class="post-form">
 						<form action="handler/request-handler.php" method="POST">
 							<a class="popup-comment btn btn-danger" href="#test-form">Отклонить карту</a>
@@ -69,9 +69,9 @@
 							<button class="btn btn-success">Опубликовать карту</button>
 						</form>
 					</div>
-					<?php
+				<?php
 					}
-					?> 
+				?> 
 				</div>
 			</div>
 		</div>
@@ -86,11 +86,11 @@
 					<div class="comment-form">
 						<form action="handler/comment-handler.php" method="POST" id="comment-form">
 							<textarea id="comment-input" name="comment" class="comment-input" cols="60" rows="4" placeholder="Что вы думаете по этому поводу?" required></textarea>
-							<?php
-								if ($userdata !== []) {
-									echo "<button id='comment-btn' class='btn btn-primary comment-btn'>Оставить комментарий</button>";
-								} else echo "<a id='comment-btn' href='#notice' class='show-message-link btn btn-primary post-add-btn'>Оставить комментарий</a>";
-								?>
+						<?php
+							if ($userdata !== []) {
+								echo "<button id='comment-btn' class='btn btn-primary comment-btn'>Оставить комментарий</button>";
+							} else echo "<a id='comment-btn' href='#notice' class='show-message-link btn btn-primary post-add-btn'>Оставить комментарий</a>";
+						?>
 						</form>
 					</div>
 					<div class="comment-output" id="comment-output">
@@ -187,7 +187,6 @@
 			});
 		});
 	</script>
-	<script src="js/ajax.js"></script>
 	<script src="js/serialize.js"></script>
 	<script src="js/script.js"></script>
 </body>

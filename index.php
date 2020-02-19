@@ -33,7 +33,7 @@
 			<div class="col-lg-12">
 				<div class="search">
 					<form action="" method="GET">
-						<input autocomplete="off" id="search-input" class="search-input" name="search" placeholder="Введите название карты" value="<?php echo $search; ?>">
+						<input autocomplete="off" type="search" id="search-input" class="search-input" name="search" placeholder="Введите название карты" value="<?php echo $search; ?>">
 						<input type="hidden" name="cat" value="<?php echo $cat; ?>">
 						<button id="search-btn" class="btn btn-primary search-btn">Поиск</button>
 					</form>
@@ -86,36 +86,36 @@
 						</div>
 						<div class="row">
 						<?php
-							if (mysqli_num_rows($select) > 0) {
-								while ($result = mysqli_fetch_assoc($select)) {
-									 ?>
-								<div class="col-md-6">
-									<div class="post">
-										<h4 class="post-header"><a class="post-header-link" href="/template.php?id=<?php echo $result['id'] ?>"><?php echo $result['name']; ?></a></h4>
-										<p class="post-time"><?php echo get_date($result['time']); ?></p>
-										<a href="/template.php?id=<?php echo $result['id'] ?>"><div class="post-img-wrap"><img src="<?php echo map_img($result['link']); ?>" alt="<?php echo $result['name']; ?>" class="post-img"><div class="post-img-hover"></div></div></a>
-										<p class="post-description"><?php echo get_description($result['description'], $result['id']); ?></p>
-										<hr class="post-inner-line">
-										<div class="row">
-											<div class="col-md-5">
-												<p class="post-category"><span class="post-sm">Категория:</span><a class="post-sm-link" href="/?cat=<?php echo $result['category_id']; ?>"><?php echo get_cat_name($conn, $result['category_id']); ?></a></p>
-											</div>
-											<div class="col-md-7">
-												<p class="post-author"><span class="post-sm">Автор:</span> <b><?php echo get_user_name($conn, $result['author_id']); ?></b></p>
-											</div>
+						if (mysqli_num_rows($select) > 0) {
+							while ($result = mysqli_fetch_assoc($select)) {
+						?>
+							<div class="col-md-6">
+								<div class="post">
+									<h4 class="post-header"><a class="post-header-link" href="/template.php?id=<?php echo $result['id'] ?>"><?php echo $result['name']; ?></a></h4>
+									<p class="post-time"><?php echo get_date($result['time']); ?></p>
+									<a href="/template.php?id=<?php echo $result['id'] ?>"><div class="post-img-wrap"><img src="<?php echo map_img($result['link']); ?>" alt="<?php echo $result['name']; ?>" class="post-img"><div class="post-img-hover"></div></div></a>
+									<p class="post-description"><?php echo get_description($result['description'], $result['id']); ?></p>
+									<hr class="post-inner-line">
+									<div class="row">
+										<div class="col-md-5">
+											<p class="post-category"><span class="post-sm">Категория:</span><a class="post-sm-link" href="/?cat=<?php echo $result['category_id']; ?>"><?php echo get_cat_name($conn, $result['category_id']); ?></a></p>
+										</div>
+										<div class="col-md-7">
+											<p class="post-author"><span class="post-sm">Автор:</span> <b><?php echo get_user_name($conn, $result['author_id']); ?></b></p>
 										</div>
 									</div>
 								</div>
-									<?php 
-									}
-								} else {
-									?>
-								<div class="col-md-8 offset-md-2">
-									<p class="post-nomaps">Не нашлось записей по данному запросу</p>
-								</div>
-									<?php
-								}
-							?>
+							</div>
+						<?php
+							}
+						} else {
+						?>
+							<div class="col-md-8 offset-md-2">
+								<p class="post-nomaps">Не нашлось записей по данному запросу</p>
+							</div>
+						<?php
+							}
+						?>
 						</div>
 					</div>
 				</div>
