@@ -45,7 +45,3 @@ function delCommFormsAddEvent() {
 		}
 	}
 }
-delCommFormsAddEvent();
-document.querySelector(".comments").addEventListener("DOMSubtreeModified", function() {
-	delCommFormsAddEvent();
-});

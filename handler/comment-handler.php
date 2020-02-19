@@ -38,7 +38,7 @@
 					<?php 
 						if ($result['author_id'] == $userdata['id']) {
 					?>
-					<form action="handler/comment-handler.php" method="POST" class="comment-delete-form">
+					<form action="handler/comment-handler.php" method="POST" class="comment-delete-form" onclick="delCommFormsAddEvent()">
 						<input type="hidden" name="delete_id" value="<?php echo $result['id']; ?>">
 						<button class="comment-delete"><img class="comment-delete-img" src="img/basket.png" alt="Удалить"></button>
 					</form>
@@ -88,10 +88,10 @@
 					<?php 
 						if ($result['author_id'] == $userdata['id']) {
 					?>
-						<form action="handler/comment-handler.php" method="POST" class="comment-delete-form">
-							<input type="hidden" name="delete_id" value="<?php echo $result['id']; ?>">
-							<button class="comment-delete"><img class="comment-delete-img" src="img/basket.png" alt="Удалить"></button>
-						</form>
+					<form action="handler/comment-handler.php" method="POST" class="comment-delete-form" onclick="delCommFormsAddEvent()">
+						<input type="hidden" name="delete_id" value="<?php echo $result['id']; ?>">
+						<button class="comment-delete"><img class="comment-delete-img" src="img/basket.png" alt="Удалить"></button>
+					</form>
 					<?php
 						}
 					?>
