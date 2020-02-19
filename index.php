@@ -65,23 +65,23 @@
 									<h2 class="post-wrap-header">Карты</h2>
 								</div>
 								<div class="col-md-4 offset-md-6">
-									<?php
-									if ($userdata !== []) {
-										echo "<a href='/add.php' class='btn btn-success post-add-btn'><span class='post-add-plus'>+</span>Добавить карту</a>";
-									} else echo "<a href='#notice' class='show-message-link btn btn-success post-add-btn'><span class='post-add-plus'>+</span>Добавить карту</a>";
-									?>
+							<?php
+								if ($userdata !== []) {
+									echo "<a href='/add.php' class='btn btn-success post-add-btn'><span class='post-add-plus'>+</span>Добавить карту</a>";
+								} else echo "<a href='#notice' class='show-message-link btn btn-success post-add-btn'><span class='post-add-plus'>+</span>Добавить карту</a>";
+							?>
 								</div>
-								<?php
+							<?php
 								if ($cat) {
-									?>
+							?>
 								<div class="col-md-12">
 									<p class="post-head-cat">Категория: <b><?php echo get_cat_name($conn, $cat); ?></b></p>
 								</div>
-									<?php
+							<?php
 								}
-									$pagination = get_pagination($conn, $offset);
-									echo $pagination;
-								?>
+								$pagination = get_pagination($conn, $offset);
+								echo $pagination;
+							?>
 							</div>
 						</div>
 						<div class="row">
@@ -138,7 +138,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-	<script src="/js/script.js"></script>
+	<script src="js/script.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.show-message-link').magnificPopup({
+				type: 'inline',
+				preloader: false
+			});
+		});
+	</script>
 </body>
 </html>
 <?php

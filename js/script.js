@@ -1,13 +1,5 @@
-$(document).ready(function() {
-	$('.show-message-link').magnificPopup({
-		type: 'inline',
-		preloader: false
-	});
-});
-
 function getNewComms(response) {
-	let commsOutput = document.querySelector("#comment-output");
-	commsOutput.outerHTML = response;
+	document.querySelector("#comment-output").outerHTML = response;
 }
 
 function updateCommentsFetch(event) {
@@ -34,11 +26,19 @@ function updateCommentsFetch(event) {
 	}
 }
 
+function delCommFormsAddEvent() {
+	let delCommForms = document.querySelectorAll(".comment-delete-form");
+	for (let i = 0; i < delCommForms.length; i++) {
+		delCommForms[i].onsubmit = updateCommentsFetch;
+	}
+}
+
 // Добавление комментария
 let commentForm = document.querySelector("#comment-form");
 commentForm.onsubmit = updateCommentsFetch;
+
 commentForm.onkeypress = function(event) {
-	if(event.keyCode == 13){
+	if (event.keyCode == 13){
 		if (event.shiftKey == 0) {
 			event.preventDefault();
 			document.querySelector("#comment-btn").click();
@@ -46,10 +46,9 @@ commentForm.onkeypress = function(event) {
 	}
 }
 
-// Удаление комментария
-function delCommFormsAddEvent() {
-	let delCommForms = document.querySelectorAll(".comment-delete-form");
-	for (let i = 0; i < delCommForms.length; i++) {
-		delCommForms[i].onsubmit = updateCommentsFetch;
+document.querySelector("#search-input").onkeypress = function(event) {
+	if (event.keyCode == 13){
+		event.preventDefault();
+		document.querySelector("#search-btn").click();
 	}
 }
